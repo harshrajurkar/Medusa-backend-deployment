@@ -1,0 +1,33 @@
+{
+    "family": "medusa-task",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "256",
+    "memory": "512",
+    "containerDefinitions": [
+      {
+        "name": "medusa-container",
+        "image": "medusajs/medusa:latest",
+        "portMappings": [
+          {
+            "containerPort": 9000,
+            "hostPort": 9000
+          }
+        ],
+        "environment": [
+          {
+            "name": "DATABASE_TYPE",
+            "value": "postgres"
+          },
+          {
+            "name": "DATABASE_URL",
+            "value": "postgres://user:password@your-postgres-host:5432/medusa-db"
+          },
+          {
+            "name": "REDIS_URL",
+            "value": "redis://your-redis-host:6379"
+          }
+        ]
+      }
+    ]
+  }

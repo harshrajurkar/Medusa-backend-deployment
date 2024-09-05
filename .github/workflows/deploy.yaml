@@ -1,0 +1,33 @@
+name: Deploy Medusa to AWS ECS
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  AWS_REGION: us-west-2
+  ECR_REPOSITORY: medusa-repo
+  ECS_CLUSTER: medusa-cluster
+  ECS_SERVICE: medusa-service
+  ECS_TASK_DEFINITION: .github/workflows/task-definition.json
+
+jobs:
+  deploy:
+    name: Deploy to ECS
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    # Add more steps for building, pushing, and deploying
+
+
+    
