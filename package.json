@@ -2,8 +2,8 @@
     "name": "medusa-backend",
     "version": "1.0.0",
     "scripts": {
-      "build": "echo 'No build command set'",
-      "start": "npx medusa migrations run && npx medusa start"
+      "build": "medusa build",
+      "start": "medusa migrations run && medusa start"
     },
     "dependencies": {
       "@medusajs/medusa": "1.0.0"
