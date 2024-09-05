@@ -6,7 +6,7 @@
       "start": "medusa migrations run && medusa start"
     },
     "dependencies": {
-      "@medusajs/medusa": "1.0.0"
+      "@medusajs/medusa": "1.3.23"
     }
   }
   
