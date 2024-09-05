@@ -2,11 +2,10 @@
     "name": "medusa-backend",
     "version": "1.0.0",
     "scripts": {
-      "build": "medusa migrations run && medusa start", 
-      "start": "npm run build && medusa migrations run && medusa start"
+      "start": "medusa migrations run && medusa start"
     },
     "dependencies": {
-      "@medusajs/medusa": "1.0.0"  
+      "@medusajs/medusa": "1.0.0"
     }
   }
   
