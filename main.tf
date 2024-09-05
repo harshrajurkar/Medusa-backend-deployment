@@ -88,10 +88,10 @@ resource "aws_ecs_task_definition" "medusa_task" {
           name  = "DATABASE_URL"
           value = var.database_url
         },
-        {
-          name  = "REDIS_URL"
-          value = var.redis_url
-        }
+        # {
+        #   name  = "REDIS_URL"
+        #   value = var.redis_url
+        # }
       ]
       logConfiguration = {
         logDriver = "awslogs"

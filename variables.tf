@@ -31,12 +31,12 @@ variable "database_url" {
   # Do not hardcode sensitive information here
 }
 
-variable "redis_url" {
-  description = "The URL for the Redis instance"
-  type        = string
-  # This should be set via environment variable or Terraform Cloud variable
-  # Do not hardcode sensitive information here
-}
+# variable "redis_url" {
+#   description = "The URL for the Redis instance"
+#   type        = string
+#   # This should be set via environment variable or Terraform Cloud variable
+#   # Do not hardcode sensitive information here
+# }
 
 variable "medusa_image_tag" {
   description = "The tag for the Medusa Docker image"
